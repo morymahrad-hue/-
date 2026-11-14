@@ -1,0 +1,38 @@
+name = "edgepanel-worker"
+main = "src/index.ts"
+compatibility_date = "2026-01-01"
+compatibility_flags = ["nodejs_compat"]
+workers_dev = true
+
+[vars]
+PANEL_TITLE = "EdgePanel"
+SUB_PATH = "/sub"
+DEFAULT_SNI = "www.cloudflare.com"
+
+# ---------------------------------------------------------------------------
+# Storage Bindings (D1 or KV)
+# Option 1 (Recommended for Git-to-Workers): Bind in Cloudflare Dashboard ->
+#   Workers & Pages -> edgepanel-worker -> Settings -> Bindings -> Add:
+#     - D1 Database with variable name: DB
+#     - OR KV Namespace with variable name: PANEL_KV
+#
+# Option 2 (CLI / wrangler.toml): Uncomment below after creating D1/KV:
+#   npx wrangler d1 create edgepanel-db
+#   npx wrangler kv namespace create PANEL_KV
+# ---------------------------------------------------------------------------
+
+# [[d1_databases]]
+# binding = "DB"
+# database_name = "edgepanel-db"
+# database_id = "YOUR_D1_DATABASE_ID"
+
+# [[kv_namespaces]]
+# binding = "PANEL_KV"
+# id = "YOUR_KV_NAMESPACE_ID"
+
+# ---------------------------------------------------------------------------
+# Secrets (Configure in Cloudflare Dashboard -> Settings -> Variables & Secrets)
+#   ADMIN_USERNAME
+#   ADMIN_PASSWORD
+#   SESSION_SECRET
+# ---------------------------------------------------------------------------

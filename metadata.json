@@ -1,0 +1,6 @@
+{
+  "name": "EdgePanel",
+  "description": "Serverless proxy configuration & subscription management panel built for Cloudflare Workers, supporting VLESS Reality/WS/gRPC, VMess, Trojan, Shadowsocks, TUIC, and Hysteria2.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
